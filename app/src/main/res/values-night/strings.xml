@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="firstname">First Name</string>
+    <string name="lastname">Last Name</string>
+    <string name="home">Home</string>
+    <string name="address01">Address 01</string>
+    <string name="address02">Address 02</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="postcode">Postcode</string>
+    <string name="accept">Accept</string>
+    <string name="birthday">Birthday</string>
+</resources>
