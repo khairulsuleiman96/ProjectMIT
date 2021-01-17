@@ -25,7 +25,7 @@ import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import com.project.mit.R;
 import com.project.mit.adapter.RecordAdapter;
-import com.project.mit.models.Record;
+import com.project.mit.details.RecordDetails;
 import com.project.mit.session.SessionManager;
 import com.project.mit.user.MyProfile;
 import com.squareup.picasso.Picasso;
@@ -54,7 +54,7 @@ public class Home extends AppCompatActivity {
     FloatingActionButton CameraOpen;
 
     RecyclerView RecordView;
-    List<Record> recordList;
+    List<RecordDetails> recordDetailsList;
     RecordAdapter recordAdapter;
 
     String getUID, getFirstName, getLastName, getEmail;
@@ -77,7 +77,7 @@ public class Home extends AppCompatActivity {
         RecordView.setLayoutManager(new LinearLayoutManager(this));
         RecordView.setNestedScrollingEnabled(false);
 
-        recordList = new ArrayList<>();
+        recordDetailsList = new ArrayList<>();
         QRScanner = new IntentIntegrator(this);
     }
     private void getSession(){
@@ -147,13 +147,13 @@ public class Home extends AppCompatActivity {
                     String CreatedDateTime = object.getString("CreatedDateTime");
 
                     Log.i("USER", RecordID);
-                    Record record = new Record(RecordID, getUID,
+                    RecordDetails recordDetails = new RecordDetails(RecordID, getUID,
                             LocationID, LocationName,
                             LocationFullAddress,RiskStatus,
                             ZoneStatus, CreatedDateTime);
-                    recordList.add(record);
+                    recordDetailsList.add(recordDetails);
                 }
-                recordAdapter = new RecordAdapter(getApplicationContext(), recordList);
+                recordAdapter = new RecordAdapter(getApplicationContext(), recordDetailsList);
                 RecordView.setAdapter(recordAdapter);
 
             } catch (JSONException e) {

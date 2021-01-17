@@ -14,6 +14,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.project.mit.R;
+import com.project.mit.models.User;
 import com.project.mit.session.SessionManager;
 
 import org.json.JSONObject;
@@ -24,6 +25,8 @@ import java.util.HashMap;
 public class MyProfile extends AppCompatActivity {
 
     private static String API_UPDATE_USER = "http://hawkingnight.com/projectmit/API/UpdateUser.php";
+
+    User user;
 
     ImageView UserImage;
     EditText FirstNameField, LastNameField, BirthdayField,
@@ -48,6 +51,8 @@ public class MyProfile extends AppCompatActivity {
         StateField = findViewById(R.id.StateField);
         PostCodeField = findViewById(R.id.PostCodeField);
         ButtonSaved = findViewById(R.id.ButtonSave);
+
+        user = new User();
     }
     private void getSession(){
         sessionManager = new SessionManager(getApplicationContext());
@@ -120,17 +125,17 @@ public class MyProfile extends AppCompatActivity {
         String Postcode = PostCodeField.getText().toString();
 
         HashMap<String, String> parameters = new HashMap<>();
-        parameters.put("UID", getUID);
-        parameters.put("FirstName", FirstName);
-        parameters.put("LastName", LastName);
-        parameters.put("Birthday", Birthday);
-        parameters.put("EmailAddress", EmailAddress);
-        parameters.put("PhoneNo", PhoneNo);
-        parameters.put("Address01", Address01);
-        parameters.put("Address02", Address02);
-        parameters.put("City", City);
-        parameters.put("State",State);
-        parameters.put("Postcode", Postcode);
+        parameters.put(user.UID, getUID);
+        parameters.put(user.FirstName, FirstName);
+        parameters.put(user.LastName, LastName);
+        parameters.put(user.Birthday, Birthday);
+        parameters.put(user.EmailAddress, EmailAddress);
+        parameters.put(user.PhoneNo, PhoneNo);
+        parameters.put(user.Address01, Address01);
+        parameters.put(user.Address02, Address02);
+        parameters.put(user.City, City);
+        parameters.put(user.State,State);
+        parameters.put(user.Postcode, Postcode);
 
         JsonObjectRequest request_json = new JsonObjectRequest(API_UPDATE_USER, new JSONObject(parameters),
                 response -> Log.i("RESPONSE", "SUCCESS!"),

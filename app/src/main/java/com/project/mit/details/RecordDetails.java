@@ -1,6 +1,6 @@
-package com.project.mit.models;
+package com.project.mit.details;
 
-public class Record {
+public class RecordDetails {
     public String RecordID,
                     UserID,
                     LocationID,
@@ -10,13 +10,13 @@ public class Record {
                     ZoneStatus,
                     CreatedDateTime;
 
-    public Record(String recordID, String userID,
-                  String locationID,
-                  String locationName,
-                  String locationFullAddress,
-                  String riskStatus,
-                  String zoneStatus,
-                  String createdDateTime) {
+    public RecordDetails(String recordID, String userID,
+                         String locationID,
+                         String locationName,
+                         String locationFullAddress,
+                         String riskStatus,
+                         String zoneStatus,
+                         String createdDateTime) {
         RecordID = recordID;
         UserID = userID;
         LocationID = locationID;
