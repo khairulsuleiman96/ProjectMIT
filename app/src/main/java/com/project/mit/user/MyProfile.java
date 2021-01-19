@@ -23,9 +23,6 @@ import java.util.Calendar;
 import java.util.HashMap;
 
 public class MyProfile extends AppCompatActivity {
-
-    private static String API_UPDATE_USER = "http://hawkingnight.com/projectmit/API/UpdateUser.php";
-
     User user;
 
     ImageView UserImage;
