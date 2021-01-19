@@ -23,9 +23,6 @@ import org.json.JSONObject;
 import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
-
-    private static final String SIGN_IN_URL = "http://hawkingnight.com/projectmit/API/GetUserSingle.php?";
-
     private SessionManager sessionManager;
     private String getUID;
 
