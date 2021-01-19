@@ -137,7 +137,7 @@ public class MyProfile extends AppCompatActivity {
         parameters.put(user.State,State);
         parameters.put(user.Postcode, Postcode);
 
-        JsonObjectRequest request_json = new JsonObjectRequest(API_UPDATE_USER, new JSONObject(parameters),
+        JsonObjectRequest request_json = new JsonObjectRequest(user.updateUser, new JSONObject(parameters),
                 response -> Log.i("RESPONSE", "SUCCESS!"),
                 error -> Log.i("ERORR", error.toString()));
 

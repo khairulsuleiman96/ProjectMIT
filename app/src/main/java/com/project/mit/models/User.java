@@ -15,7 +15,7 @@ public class User {
     public String Postcode = "Postcode";
     public String CreatedDateTime = "CreatedDateTime";
 
-    public static final String createUser = "http://hawkingnight.com/projectmit/API/CreateUser.php";
-    public static final String getUserEmailSingle = "http://hawkingnight.com/projectmit/API/GetUserEmail.php?";
-    public static final String updateUser = "http://hawkingnight.com/projectmit/API/UpdateUser.php";
+    public String createUser = "http://hawkingnight.com/projectmit/API/CreateUser.php";
+    public String getUserEmailSingle = "http://hawkingnight.com/projectmit/API/GetUserEmail.php?";
+    public String updateUser = "http://hawkingnight.com/projectmit/API/UpdateUser.php";
 }
