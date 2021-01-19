@@ -82,6 +82,7 @@ public class Login extends AppCompatActivity {
                 String UID = jsonObject.getString(user.UID);
                 String FirstName = jsonObject.getString(user.FirstName);
                 String LastName = jsonObject.getString(user.LastName);
+                String ProfilePicture = jsonObject.getString(user.ProfilePicture);
                 String Birthday = jsonObject.getString(user.Birthday);
                 String EmailAddress = jsonObject.getString(user.EmailAddress);
                 String PhoneNo = jsonObject.getString(user.PhoneNo);
@@ -91,7 +92,7 @@ public class Login extends AppCompatActivity {
                 String State = jsonObject.getString(user.State);
                 String PostCode = jsonObject.getString(user.Postcode);
 
-                sessionManager.createSession(UID, FirstName, LastName, Birthday, EmailAddress, PhoneNo, Address01, Address02, City, State, PostCode);
+                sessionManager.createSession(UID, FirstName, LastName, ProfilePicture, Birthday, EmailAddress, PhoneNo, Address01, Address02, City, State, PostCode);
 
                 Intent IntentHome = new Intent(getApplicationContext(), Home.class);
                 startActivity(IntentHome);
